@@ -95,5 +95,5 @@ By using the Extension, you agree to this privacy policy.
 
 **MS Teams Group Add Extension**  
 Version 2.0.0  
-© 2024 Oleksandr Tkachenko
+© 2025 Oleksandr Tkachenko
 
