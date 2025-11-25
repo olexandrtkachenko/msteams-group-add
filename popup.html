@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="popup.css">
+    <title>MS Teams Group Add</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>MS Teams Group Add</h2>
+            <p class="subtitle">Automatically add members to groups</p>
+            <div id="processingWarning" class="warning hidden">
+                ⚠️ Processing... Please keep this window open!
+            </div>
+        </div>
+        
+        <div class="content">
+            <label>Paste table from Excel (Email | Full Name):</label>
+            <textarea 
+                id="pasteArea" 
+                placeholder="Copy 2 columns from Excel and paste here (Ctrl+V)&#10;&#10;Example:&#10;john@example.com    John Doe&#10;jane@example.com    Jane Smith"
+                rows="8"
+            ></textarea>
+            
+            <div id="userCount" class="user-count hidden"></div>
+            
+            <div class="buttons">
+                <button id="startBtn" class="btn btn-primary" disabled>Start Adding</button>
+                <button id="stopBtn" class="btn btn-danger hidden">Stop</button>
+                <button id="clearBtn" class="btn btn-secondary">Clear</button>
+            </div>
+            
+            <div id="progress" class="progress hidden">
+                <div class="progress-bar">
+                    <div id="progressFill" class="progress-fill"></div>
+                </div>
+                <div class="progress-text">
+                    <span id="progressText">0 of 0</span>
+                    <span id="progressPercent">0%</span>
+                </div>
+            </div>
+            
+            <div id="stats" class="stats hidden">
+                <h3>Statistics</h3>
+                <div class="stat-item">
+                    <span>✅ Successfully added:</span>
+                    <span id="statSuccess">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>❌ Failed:</span>
+                    <span id="statFailed">0</span>
+                </div>
+            </div>
+            
+            <div id="failedList" class="failed-list hidden">
+                <h3>❌ Failed Users</h3>
+                <div id="failedEmails" class="failed-emails"></div>
+                <button id="copyFailedBtn" class="btn btn-secondary">📋 Copy Failed Emails</button>
+            </div>
+        </div>
+        
+        <div class="footer">
+            👨‍💻 Created by: <a href="mailto:Oleksandr_Tkachenko@outlook.com">Oleksandr Tkachenko</a>
+        </div>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>
+
